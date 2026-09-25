@@ -1,0 +1,6 @@
+default_profile: new
+tab_bar_position: Bottom
+tab_bar_visibility: Never
+theme: dark
+ui_style: native
+window_control_style: plasma

@@ -1,0 +1,5 @@
+
+alias ls="eza --group-directories-first"
+alias mount-phone='GATEWAY=$(ip route show default | awk "{print \$3}"); sshfs -p 1234 root@"${GATEWAY}":/storage/emulated/0/Music ~/Music/Phone -o reconnect'
+
+
