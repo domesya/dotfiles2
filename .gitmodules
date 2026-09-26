@@ -1,0 +1,6 @@
+[submodule "/run/media/domes/Disk1/programy/Downloads/git/dotfiles2/home/.local/share/zsh/zsh-autosuggestions"]
+	path = /run/media/domes/Disk1/programy/Downloads/git/dotfiles2/home/.local/share/zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "/run/media/domes/Disk1/programy/Downloads/git/dotfiles2/home/.local/share/zsh/zsh-syntax-highlighting"]
+	path = /run/media/domes/Disk1/programy/Downloads/git/dotfiles2/home/.local/share/zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
