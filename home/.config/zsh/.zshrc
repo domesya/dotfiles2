@@ -28,3 +28,6 @@ _comp_options+=(globdots)		# Include hidden files.
 
 . ~/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 . ~/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.config/shell/profile ] && . ~/.config/shell/profile
+[ -f ~/.config/shell/aliases ] && . ~/.config/shell/aliases
