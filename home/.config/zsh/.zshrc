@@ -1,7 +1,10 @@
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#0066aa,bg=pink,bold,underline"
 
+_data_dir="${XDG_DATA_HOME:-$HOME/.local/share}"
+_config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
+
 # history
-HISTFILE="$HOME/.local/share/shells/.zsh_history"
+HISTFILE="${_data_dir}/shells/.zsh_history"
 HISTSIZE=1000
 SAVEHIST=10000
 
@@ -26,8 +29,8 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-. ~/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-. ~/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. "${_data_dir}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+. "${_data_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-[ -f ~/.config/shell/profile ] && . ~/.config/shell/profile
-[ -f ~/.config/shell/aliases ] && . ~/.config/shell/aliases
+[ -f "${_config_dir}/shell/profile" ] && . "${_config_dir}/shell/profile"
+[ -f "${_config_dir}/shell/aliases" ] && . "${_config_dir}/shell/aliases"
