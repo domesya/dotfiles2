@@ -20,9 +20,9 @@ _prepare_dirs() {
 }
 
 _install_the_thing() {
-    cp -r ${_base_dir}/home/.config/zsh "$_config_dir"
-    cp -r ${_base_dir}/home/.config/shell "$_config_dir"
-    cp -r ${_base_dir}/home/.local/share/zsh "$_data_dir"
+    cp -r "${_base_dir}/home/.config/zsh" "$_config_dir"
+    cp -r "${_base_dir}/home/.config/shell" "$_config_dir"
+    cp -r "${_base_dir}/home/.local/share/zsh" "$_data_dir"
 }
 
 _prompt() {
