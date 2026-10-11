@@ -40,6 +40,7 @@ if _prompt "Do you want to install the thing?"; then
     echo "Proceeding..."
     _prepare_dirs || return 1
     _install_the_thing || { echo "Install failed!"; }
+    echo "All done!"
 else
     echo "Aborted by user."
     exit 0
