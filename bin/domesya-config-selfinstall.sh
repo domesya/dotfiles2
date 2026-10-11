@@ -8,6 +8,7 @@ _zsh_hist_dir="${XDG_DATA_HOME:-$HOME/.local/share}/shells"
 
 _data_dir="${XDG_DATA_HOME:-$HOME/.local/share}"
 _config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
+_home_dir="${HOME}"
 
 _prepare_dirs() {
     # mkdir -p "$_zsh_dir"
@@ -23,6 +24,7 @@ _install_the_thing() {
     cp -r "${_base_dir}/home/.config/zsh" "$_config_dir"
     cp -r "${_base_dir}/home/.config/shell" "$_config_dir"
     cp -r "${_base_dir}/home/.local/share/zsh" "$_data_dir"
+    cp -r "${_base_dir}/home/.zshenv" "$_home_dir"
 }
 
 _prompt() {
