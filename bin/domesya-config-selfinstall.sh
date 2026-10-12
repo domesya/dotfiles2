@@ -20,30 +20,24 @@ _prepare_dirs() {
     mkdir -p "$_zsh_hist_dir"
 }
 
-_install_the_thing() {
+_install_the_zsh() {
     cp -r "${_base_dir}/home/.config/zsh" "$_config_dir"
     cp -r "${_base_dir}/home/.config/shell" "$_config_dir"
     cp -r "${_base_dir}/home/.local/share/zsh" "$_data_dir"
     cp -r "${_base_dir}/home/.zshenv" "$_home_dir"
 }
 
-_prompt() {
-    printf "%s [y/N] " "${1:-Are you sure?}"
-    read -r response || return 1
-    case "$response" in
-        [yY] | [yY][eE][sS]) return 0
+_install_the_nvim() {
+    echo "This config needs NvChad to work as intended! Make sure you have it installed if you really wish to use this config!"
+    cp -r "${_base_dir}/home/.config/nvim" "$_config_dir"
+}
+
+_parse_arguments() {
+    case "${1:-}" in
+        nvim) _prepare_dirs; _install_the_nvim;
             ;;
-        *) return 1
+        zsh) _prepare_dirs; _install_the_zsh;
             ;;
     esac
 }
 
-if _prompt "Do you want to install the thing?"; then
-    echo "Proceeding..."
-    _prepare_dirs || return 1
-    _install_the_thing || { echo "Install failed!"; }
-    echo "All done!"
-else
-    echo "Aborted by user."
-    exit 0
-fi

@@ -2,7 +2,7 @@
 live_config_reload = true 
 
 import = [
-  "~/.config/alacritty/noctis-default.toml"
+  "~/.config/alacritty/colors.toml"
 ]
 
 [env]
@@ -11,19 +11,41 @@ TERM = "xterm-256color"
 [window]
 padding = { x = 4, y = 4 }
 dynamic_padding = true
+opacity = 0.9
 
 [font]
-normal = { 
-  family = "PxPlus IBM VGA 8x16",
+# normal = { 
+#  family = "PxPlus IBM VGA 8x16",
+# }
+#normal = {
+#  family = "UnifontExMono"
+#}
+# normal = {
+#   family = "Cozette",
+#   style = "HiDpi"
+# }
+# normal = {
+#   family = "CozetteVector"
+# }
+normal = {
+  family = "Pixel Code"
 }
+
 #normal = { family = "Inconsolata Nerd Font" }
-size = 14.0
+size = 10.0
 
 [terminal]
 shell = { 
-    program = "/bin/sh", 
+    program = "/usr/bin/zsh", 
     args = [
-     "-c",
-     #"zellij attach --create fumo",
-     "tmux attach-session -t fumo 2>/dev/null || tmux new-session -s fumo"
-     ] }
+    #  "-c",
+    #  #"zellij attach --create fumo",
+    #  "tmux attach-session -t fumo 2>/dev/null || tmux new-session -s fumo"
+    ] 
+}
+
+[keyboard]
+bindings = [
+  { key = "A", mods = "Alt", chars = "\u001ba" },
+  { key = "D", mods = "Alt", chars = "\u001bd" }
+]
