@@ -3,6 +3,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#0066aa,bg=pink,bold,underline"
 _data_dir="${XDG_DATA_HOME:-$HOME/.local/share}"
 _config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
+fpath=($HOME/.config/zsh/functions $fpath)
+
 # history
 HISTFILE="${_data_dir}/shells/.zsh_history"
 HISTSIZE=1000

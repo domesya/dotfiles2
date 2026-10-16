@@ -1,0 +1,57 @@
+# Main line layout:
+# Top left line with os, directory, git branch
+# Fill with dots in between
+# Top right line with command duration and time
+# Bottom line prompt character
+format = """
+[╭─](dimmed white)$os$directory$git_branch$fill$cmd_duration$time[─╮](dimmed white)
+[╰─](dimmed white)$character"""
+
+# Fill the space between left and right prompt with dots
+[fill]
+symbol = " . "
+style = "dimmed white"
+
+# Operating System Icon (Ubuntu icon pictured in screenshot)
+[os]
+disabled = false
+format = "[ $symbol ]($style)"
+style = "white"
+
+[os.symbols]
+Ubuntu = ""
+Debian = ""
+Arch = "󰣇"
+Fedora = "󰣛"
+Macos = "󰀵"
+Windows = "󰍲"
+
+# Current Directory Configuration
+[directory]
+format = "[ / ](dimmed white)[📁 $path]($style)[ / ](dimmed white)"
+style = "bold cyan"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Git Branch Configuration
+[git_branch]
+format = "on [🐱 $symbol $branch]($style) "
+symbol = "🌿"
+style = "bold green"
+
+# Command Duration Configuration
+[cmd_duration]
+format = "[took $duration ⌛](bold yellow)[ / ](dimmed white)"
+min_time = 2_000
+
+# Time Configuration
+[time]
+disabled = false
+format = "[at $time 🕒]($style)"
+style = "cyan"
+time_format = "%T"
+
+# Input Prompt Character on Second Line
+[character]
+success_symbol = "[❯](bold green) "
+error_symbol = "[❯](bold red) "

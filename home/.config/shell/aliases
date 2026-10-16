@@ -5,6 +5,9 @@ alias mount-phone='GATEWAY=$(ip route show default | awk "{print \$3}"); sshfs -
 alias phone-mount="sshfs -p 1234 root@100.79.93.114:/storage/emulated/0/Music ~/Music/Phone -o reconnect"
 alias ff="fastfetch -c examples/25.jsonc"
 
+alias ai-integrate="appimage-integrate.sh"
+alias ai-update="appimageupdatetool"
+
 dl-music() {
     yt-dlp --restrict-filenames -x --audio-format mp3 --add-metadata --embed-thumbnail --no-playlist --ffmpeg-location=/usr/bin/ffmpeg "$@"
 }
