@@ -23,7 +23,7 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE
 
 # Basic auto/tab complete:
-autoload -Uz +X compinit && compinit
+autoload -Uz +X compinit
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
@@ -36,3 +36,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 [ -f "${_config_dir}/shell/profile" ] && . "${_config_dir}/shell/profile"
 [ -f "${_config_dir}/shell/aliases" ] && . "${_config_dir}/shell/aliases"
+
+[ -f "${_config_dir}/zsh/.zprofile" ] && . "${_config_dir}/zsh/.zprofile"
+
+eval "$(starship init zsh)"
