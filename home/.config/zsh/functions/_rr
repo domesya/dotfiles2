@@ -1,0 +1,10 @@
+#compdef rr
+
+_rr() {
+	_arguments \
+    '(-H -h --help)'{-H,-h,--help}'[Show help]' \
+    '--check[Perform a check]' \
+    '*:command:_command_names -e'
+}
+
+_rr "$@"
