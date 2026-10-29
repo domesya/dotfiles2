@@ -1,9 +1,9 @@
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#0066aa,bg=pink,bold,underline"
 
 _data_dir="${XDG_DATA_HOME:-$HOME/.local/share}"
-_config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
+_config_dir="${HOME}/.config"
 
-fpath=($HOME/.config/zsh/functions $fpath)
+fpath=("${_config_dir}/zsh/functions" $fpath)
 
 # history
 HISTFILE="${_data_dir}/shells/.zsh_history"
@@ -28,15 +28,14 @@ autoload -Uz +X compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -C
 _comp_options+=(globdots)		# Include hidden files.
 
 . "${_data_dir}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 . "${_data_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-[ -f "${_config_dir}/shell/profile" ] && . "${_config_dir}/shell/profile"
-[ -f "${_config_dir}/shell/aliases" ] && . "${_config_dir}/shell/aliases"
-
-[ -f "${_config_dir}/zsh/.zprofile" ] && . "${_config_dir}/zsh/.zprofile"
+[ -f "${_config_dir}/shell/profile" ] && . "${_config_dir}/shell/profile" || >&2 echo "loading profile failed" 
+[ -f "${_config_dir}/shell/aliases" ] && . "${_config_dir}/shell/aliases" || >&2 echo "loading aliases failed"
+[ -f "${_config_dir}/zsh/.zprofile" ] && . "${_config_dir}/zsh/.zprofile" || >&2 echo "loading zprofile failed"
 
 eval "$(starship init zsh)"

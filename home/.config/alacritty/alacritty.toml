@@ -2,7 +2,7 @@
 live_config_reload = true 
 
 import = [
-  "~/.config/alacritty/colors.toml"
+  "~/.config/alacritty/12-bit_rainbow.toml"
 ]
 
 [env]
@@ -11,15 +11,13 @@ TERM = "xterm-256color"
 [window]
 padding = { x = 4, y = 4 }
 dynamic_padding = true
-opacity = 0.9
+opacity = 0.95
 
 [font]
 # normal = { 
 #  family = "PxPlus IBM VGA 8x16",
 # }
-#normal = {
-#  family = "UnifontExMono"
-#}
+# normal = { family = "UnifontExMono" }
 # normal = {
 #   family = "Cozette",
 #   style = "HiDpi"
@@ -27,20 +25,33 @@ opacity = 0.9
 # normal = {
 #   family = "CozetteVector"
 # }
-normal = {
-  family = "Pixel Code"
-}
+# normal = { family = "Pixel Code" }
+# normal = {
+#   family = "TerminalVector"
+# }
 
+# normal = { family = "JetBrains Mono Nerd Font" }
+# normal = { family = "bitbuntufull-ttf" }
+# normal = { family = "progsole" }
+normal = { family = "progsole-ttf" }
+# normal = { family = "progsole-1.5x" }
+
+# normal = { family = "kakwafont" }
+# normal = { family = "envypn" }
 #normal = { family = "Inconsolata Nerd Font" }
-size = 10.0
+
+# normal = { family = "gbjve" }
+
+# size = 32.0
+size = 9.0
 
 [terminal]
 shell = { 
     program = "/usr/bin/zsh", 
     args = [
-    #  "-c",
+      "-c",
     #  #"zellij attach --create fumo",
-    #  "tmux attach-session -t fumo 2>/dev/null || tmux new-session -s fumo"
+      "~/.local/bin/rmux attach-session -t fumo 2>/dev/null || ~/.local/bin/rmux new-session -s fumo"
     ] 
 }
 
