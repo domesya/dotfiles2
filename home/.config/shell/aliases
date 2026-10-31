@@ -11,3 +11,7 @@ alias ai-update="appimageupdatetool"
 dl-music() {
     yt-dlp --restrict-filenames -x --audio-format mp3 --add-metadata --embed-thumbnail --no-playlist --ffmpeg-location=/usr/bin/ffmpeg "$@"
 }
+
+run-portable() {
+  env -u XDG_CONFIG_HOME "$@"
+}
